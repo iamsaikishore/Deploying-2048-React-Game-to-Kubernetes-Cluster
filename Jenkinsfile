@@ -67,6 +67,11 @@ pipeline{
                 sh "trivy image iamsaikishore/2048-game:latest > trivy.txt" 
             }
         }
+	stage('Deploy to container'){
+            steps{
+                sh 'docker run -d --name 2048 -p 3000:3000 iamsaikishore/2048-game:latest'
+            }
+        }
 
     }
 }
