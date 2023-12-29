@@ -49,6 +49,24 @@ pipeline{
                 sh "trivy fs . > trivyfs.txt"
             }
         }
+	stage("Docker Build & Push"){
+            steps{
+                script{
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                       sh "docker build -t 2048 ."
+		       sh "docker tag 2048 iamsaikishore/2048-game:v1.${env.BUILD_NUMBER}"
+                       sh "docker tag 2048 iamsaikishore/2048-game:latest "
+		       sh "docker push iamsaikishore/2048-game:v1.${env.BUILD_NUMBER}"
+                       sh "docker push iamsaikishore/2048-game:latest "
+                    }
+                }
+            }
+        }
+        stage("TRIVY"){
+            steps{
+                sh "trivy image iamsaikishore/2048-game:latest > trivy.txt" 
+            }
+        }
 
     }
 }
