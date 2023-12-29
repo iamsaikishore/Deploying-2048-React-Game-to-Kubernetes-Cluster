@@ -35,3 +35,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Links
+
+https://mrcloudbook.hashnode.dev/devsecops-deploying-the-2048-game-on-docker-and-kubernetes-with-jenkins-cicd
+
+https://github.com/Aj7Ay/2048-React-CICD/blob/master/public/index.html
+
+https://github.com/mateuszsokola/2048-in-react
+
+
